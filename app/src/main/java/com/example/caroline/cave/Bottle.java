@@ -1,8 +1,10 @@
 package com.example.caroline.cave;
 
-public class Bottle {
-    private static String bottleName;
-    private static  float bottlePrice;
+import java.io.Serializable;
+
+public class Bottle implements Serializable {
+    private String bottleName;
+    private float bottlePrice;
 
     public Bottle() {
         bottleName = "";
@@ -14,11 +16,11 @@ public class Bottle {
         bottlePrice = price;
     }
 
-    public static String getName(Bottle bottle) {
+    public String getName() {
         return bottleName;
     }
 
-    public static float getPrice(Bottle bottle) {
+    public float getPrice() {
         return bottlePrice;
     }
 }

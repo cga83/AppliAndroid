@@ -18,9 +18,13 @@ public class Cellar {
         addBottleToList(bottleToAdd);
     }
 
+    void addBottle(Bottle bottle) {
+        addBottleToList(bottle);
+    }
+
     Bottle getBottle(String name) {
         for (Bottle bottle : bottles) {
-            if (Bottle.getName(bottle).equals(name))
+            if (bottle.getName().equals(name))
                 return bottle;
         }
         return new Bottle();
@@ -29,12 +33,12 @@ public class Cellar {
     float getTotalPriceInEuros() {
         float totalPrice = 0;
         for (Bottle bottle : bottles)
-            totalPrice += Bottle.getPrice(bottle);
+            totalPrice += bottle.getPrice();
         return totalPrice;
     }
 
     float getTotalPriceInDollars() {
-        return getTotalPriceInEuros()*87/100;
+        return getTotalPriceInEuros() * 87 / 100;
     }
 
     int getNumberOfBottles() {
